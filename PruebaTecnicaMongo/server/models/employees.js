@@ -29,6 +29,10 @@ const employeeSchema = mongoose.Schema({
     type:String,
     require: true
   },
+  fechacreacion:{
+    type:Date,
+    default: Date.now()
+  }
 })
 
 module.exports = mongoose.model('Empleado', employeeSchema)

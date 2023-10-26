@@ -1,1 +1,92 @@
-<p>create-employee works!</p>
+<div class="container">
+  <div class="row">
+      <div class="card col-lg-12 col-md-12 col-sm-16 mt-5 mb-5">
+        <div class="card-header text-center">
+          <span><h4 class="title">{{title}}</h4></span>
+        </div>
+        <div class="card-body">
+            <div class="text-obligatory">
+              <h6>Los campos con aterisco (*) son obligatorios</h6>
+            </div>
+            <form [formGroup]="EmployeeForm" (ngSubmit)="addEmployee()">
+              <div class="label mb-3">
+                <label class="form-label">Nombre Completo *</label>
+                <input type="text" class="form-control" formControlName="name" [class.is-invalid]="nameNValid">
+                <small *ngIf="nameNValid" class="text-danger">El Nombre Es Obligatiorio</small>
+              </div>
+              <div class="label mb-3">
+                <label class="form-label">Correo Electronico *</label>
+                <input type="email" class="form-control" formControlName="email" [class.is-invalid]="emailNValid">
+                <small *ngIf="emailNValid" class="text-danger">El Correo Es Obligatorio y Valido</small>
+              </div>
+              <div class="label mb-3">
+                <label class="form-label radio">Sexo *</label>
+                <div class="label-check">
+                  <div class="form-check">
+                    <input class="form-check-input" type="radio" name="sex" formControlName="sex" value="Masculino" [class.is-invalid]="sexNValid">
+                    <label class="form-check-label" for="flexRadioDefault1">
+                      Masculino
+                    </label>
+                  </div>
+                  <div class="form-check">
+                    <input class="form-check-input" type="radio" name="sex" formControlName="sex" value="Femenino" [class.is-invalid]="sexNValid">
+                    <label class="form-check-label" for="flexRadioDefault2">
+                      Femenino
+                    </label>
+                  </div>
+                  <small *ngIf="sexNValid" class="text-danger">El Sexo Es Obligatorio</small>
+                </div>
+              </div>
+              <div class="label mb-3">
+                <label class="form-label">Área *</label>
+                <select class="form-select" formControlName="area" [class.is-invalid]="areaNValid">
+                  <option selected>Administración</option>
+                  <option value="1">One</option>
+                  <option value="2">Two</option>
+                  <option value="3">Three</option>
+                </select>
+                <small *ngIf="areaNValid" class="text-danger">El Area Es Obligatioria</small>
+              </div>
+              <div class="label mb-3">
+                  <label class="form-label">Descripción *</label>
+                  <textarea class="form-control" rows="3" placeholder="Descripcion de la experiencia del empleado" formControlName="description" [class.is-invalid]="descNValid"></textarea>
+                  <small *ngIf="descNValid" class="text-danger">La Descripcion Es Obligatioria</small>
+              </div>
+              <div class="label mb-3">
+                <label class="form-label radio"></label>
+                <div class="form-check">
+                    <input type="checkbox" class="form-check-input" id="exampleCheck1" formControlName="boletin" value="False">
+                    <label class="form-check-label" for="exampleCheck1">Deseo recibir boletín informativo</label>
+                </div>
+              </div>
+              <div class="label mb-3">
+                <label class="form-label radio">Roles *</label>
+                <div class="label-check">
+                  <div class="form-check">
+                    <input class="form-check-input" type="radio" name="rols" formControlName="rols" value="Profesional de proyectos - Desarrollador" [class.is-invalid]="rolsNValid">
+                    <label class="form-check-label">
+                      Profesional de proyectos - Desarrollador
+                    </label>
+                  </div>
+                  <div class="form-check">
+                    <input class="form-check-input" type="radio" name="rols" formControlName="rols" value="Gerente estrategico" [class.is-invalid]="rolsNValid">
+                    <label class="form-check-label" >
+                      Gerente estrategico
+                    </label>
+                  </div>
+                  <div class="form-check">
+                    <input class="form-check-input" type="radio" name="rols" formControlName="rols" value="Auxiliar administrativo" [class.is-invalid]="rolsNValid">
+                    <label class="form-check-label">
+                      Auxiliar administrativo
+                    </label>
+                  </div>
+                </div>
+                <small *ngIf="rolsNValid" class="text-danger">El Rol es Obligatorio</small>
+              </div>
+                <button type="submit" class="btn btn-primary">Guardar</button>
+                <button type="button" class="btn btn-secondary" routerLink="/list-employee">Cancelar</button>
+            </form>
+        </div>
+      </div>
+  </div>
+</div>

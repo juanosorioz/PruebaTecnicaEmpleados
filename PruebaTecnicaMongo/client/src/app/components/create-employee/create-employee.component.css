@@ -1,0 +1,35 @@
+.text-obligatory{
+  background-color: rgb(198, 234, 255);
+  padding: 10px;
+  border-radius: 0.2em;
+}
+.text-obligatory h6{
+  margin-left: 5px;
+  color: rgb(73, 131, 162);
+}
+.card-header,.card-body{
+  margin-left: 150px;
+  margin-right: 150px;
+}
+.label,.label-check{
+  display: flex;
+  margin-top: 25px;
+}
+.form-label{
+  width: 30%;
+  text-align: center;
+}
+.form-control{
+  margin-right: 10px;
+}
+.label-check{
+flex-direction: column;
+margin-top: 0;
+}
+.radio{
+  width: 23%;
+}
+.btn{
+  margin-left: 23%;
+  border: solid black 1px;
+}
